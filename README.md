@@ -44,3 +44,16 @@ This project uses environment variables to securely manage API keys.
 1. **Clone the repo**:
    ```bash
    git clone [https://github.com/sei22/Hackathon-SPASEA-PosAIdon.git](https://github.com/sei22/Hackathon-SPASEA-PosAIdon.git)
+   ```
+2. **Install dependencies**
+3. **Set up your environment**:
+  Create a `.env` file at the root of the project with your API credentials:
+  ```bash
+  DAWEX_CLIENT_ID=your_id
+  DAWEX_CLIENT_SECRET=your_secret
+  OPENROUTER_API_KEY=your_key
+  ```
+---
+
+## Contributors
+[Sei BAYLE](https://github.com/sei22), [Juliette FAURIE](https://github.com/juliettefaurie), Charbel DIB, Axel GRUYEZ
