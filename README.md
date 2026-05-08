@@ -1,43 +1,46 @@
-# 🔱 PosAIdon - Assistant Naval Augmenté (LLM & Data Fusion)
-**🏆 Vainqueur du 1er Prix - Hackathon SPASEA (Naval Group / DGA)**
+# 🔱 PosAIdon - Augmented Naval Assistant (LLM & Data Fusion)
+**🏆 1st Prize Winner - SPASEA Hackathon (Naval Group / DGA)**
 
 ![Badge Victoire](https://img.shields.io/badge/Award-1st%20Prize-gold?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python)
 ![IA](https://img.shields.io/badge/AI-LLM%20%26%20RAG-red?style=for-the-badge)
 
-## 🌊 Le Challenge
-Comment aider les marins à repérer des **"Dark Vessels"** (navires suspects avec coupure AIS ou trajectoires anormales) dans l'immensité de l'océan ? 
+## 🌊 The Challenge
+How can we help naval operators spot **"Dark Vessels"** (suspicious ships with disabled AIS or abnormal trajectories) in the vastness of the ocean?
 
-Face à 10 équipes issues de l'IMT Atlantique, de l'École Navale et de l'ENSTA Bretagne, notre équipe **PosAIdon** a développé une solution d'aide à la décision opérationnelle récompensée pour sa pertinence et sa faisabilité technique.
+Competing against 10 teams from IMT Atlantique, École Navale, and ENSTA Bretagne during this 24h hackathon, our team **PosAIdon** developed an operational decision-support dashboard that was rewarded for its tactical relevance and technical feasibility.
 
-## 💡 La Solution : L'Intelligence au service de l'Action
-Plutôt que d'ajouter une couche de données supplémentaire, nous avons créé un outil qui **fusionne** et **analyse** l'information pour l'opérateur :
+## 💡 The Solution: Intelligence in Action
+Rather than just adding another data layer, we created an interactive tool that **fuses** and **analyzes** information for the operator:
 
-1. **Moteur de Fusion Multi-sources** : Croisement en temps réel des signaux AIS (positions), des signatures Radiofréquences (RF) et des éphémérides satellitaires pour détecter ce qui est invisible à l'œil nu.
-2. **Assistant Tactique Intelligent** : Interface de type LLM permettant d'interroger la situation tactique en langage naturel (ex: *"Y a-t-il des comportements anormaux dans la zone B ?"*) et d'obtenir des analyses claires et structurées.
+1. **Multi-source Data Fusion & Tracking**: Real-time cross-referencing of AIS signals, Radio Frequency (RF) signatures, and satellite ephemerides to detect what is invisible to the naked eye. Features a live map with animated trajectory replays.
+2. **Suspicion Detection**: Flags vessels with abnormal speeds (drifting, unexpectedly stopped), detects RF signals with no corresponding AIS (classic dark vessel pattern), and scores vessels based on behavioral anomalies to identify potential spoofing.
+3. **Intelligent Tactical Assistant**: An AI agent allowing operators to query the tactical situation in natural language (e.g., *"Is vessel MMSI 227XXXXXX behaving normally?"* or *"Which vessels have no AIS in this zone?"*).
+4. **Operator Report (PDF)**: One-click PDF report generation summarizing a vessel of interest (history, anomalies, current position) ready to be handed off to the on-duty officer.
 
-## 🛠️ Stack Technique
-* **Langages** : Python (Pandas, Requests)
-* **IA / LLM** : Architecture RAG avec intégration de modèles via **OpenRouter (Grok)**
-* **Cartographie** : **Folium** (plus de 35 couches de données maritimes : bathymétrie, météo, câbles sous-marins, ZEE)
-* **Data** : Ingestion via l'API **Dawex** (Space Data Marketplace)
-* **Partenaires Data** : Unseenlabs (RF), Prométhée (Sat), CNES
+## 🛠️ Tech Stack
+* **Languages & Core**: Python (pandas, pyarrow, requests, ipywidgets)
+* **AI Agent**: LangChain, LangGraph, OpenRouter API (Grok / GPT)
+* **Mapping**: **Folium** & Geopy (35+ maritime layers including EMODnet, NOAA, GEBCO, Marine Regions, bathymetry, EEZ, etc.)
+* **Data Integration**: Ingestion via **Dawex** API (Space Data Marketplace)
+* **Data Partners**: Unseenlabs (RF), Prométhée (Sat), CNES
+* **Environment**: Jupyter / Google Colab
 
-## 📸 Aperçu du Projet
+## 📸 Project Overview
 <p align="center">
-  <img src="Assets/Screenshot 2025-12-05 11.11.55.png" width="45%" alt="Vue Cartographique Tactique">
-  <img src="Assets/Screenshot 2025-12-05 12.54.08.png" width="45%" alt="Interface Assistant IA">
+  <img src="Assets/Screenshot 2025-12-05 11.11.55.png" width="45%" alt="Tactical Map View">
+  <img src="Assets/Screenshot 2025-12-05 12.54.08.png" width="45%" alt="AI Assistant Interface">
 </p>
-<p align="center"><i>Vue de la cartographie tactique et de l'interface conversationnelle.</i></p>
+<p align="center"><i>Tactical map view and natural language conversational interface.</i></p>
 
-## 📂 Structure du Repository
-* `/Notebook/` : Le cœur de l'analyse (Python Notebook) avec la fusion de données et l'agent IA.
-* `/Assets/` : Captures d'écran et démonstrations visuelles du projet.
-* `requirements.txt` : Dépendances nécessaires pour faire tourner le projet.
+## 📂 Repository Structure
+* `/Notebook/` : The core analysis (Python Notebook) including data fusion pipelines and the AI agent logic.
+* `/Assets/` : Screenshots and visual demonstrations of the project.
+* `requirements.txt` : Required dependencies to run the project.
 
-## 🚀 Installation & Sécurité
-Ce projet utilise des variables d'environnement pour la gestion des clés API.
+## 🚀 Getting Started & Security
+This project uses environment variables to securely manage API keys.
 
-1. **Clonez le repo** :
+1. **Clone the repo**:
    ```bash
-   git clone [https://github.com/TonPseudo/Hackathon-SPASEA-PosAIdon.git](https://github.com/TonPseudo/Hackathon-SPASEA-PosAIdon.git)
+   git clone [https://github.com/sei22/Hackathon-SPASEA-PosAIdon.git](https://github.com/sei22/Hackathon-SPASEA-PosAIdon.git)
