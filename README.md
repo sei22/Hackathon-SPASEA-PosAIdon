@@ -41,22 +41,31 @@ Rather than just adding another data layer, we created an interactive tool that 
 * `/Notebook/` : The core analysis (Python Notebook) including data fusion pipelines and the AI agent logic.
 * `/Assets/` : Screenshots and visual demonstrations of the project.
 * `requirements.txt` : Required dependencies to run the project.
+* `.env.example` : Template for the API credentials (copy to `.env`).
 
 ## 🚀 Getting Started & Security
 This project uses environment variables to securely manage API keys.
 
 1. **Clone the repo**:
    ```bash
-   git clone [https://github.com/sei22/Hackathon-SPASEA-PosAIdon.git](https://github.com/sei22/Hackathon-SPASEA-PosAIdon.git)
+   git clone https://github.com/sei22/Hackathon-SPASEA-PosAIdon.git
+   cd Hackathon-SPASEA-PosAIdon
    ```
-2. **Install dependencies**
+2. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
 3. **Set up your environment**:
-  Create a `.env` file at the root of the project with your API credentials:
-  ```bash
-  DAWEX_CLIENT_ID=your_id
-  DAWEX_CLIENT_SECRET=your_secret
-  OPENROUTER_API_KEY=your_key
-  ```
+   Copy `.env.example` to `.env` and fill in your own API credentials:
+   ```bash
+   cp .env.example .env
+   ```
+   ```dotenv
+   DAWEX_CLIENT_ID=your_id
+   DAWEX_CLIENT_SECRET=your_secret
+   OPENROUTER_API_KEY=your_key
+   ```
+4. **Run the notebook**: open `Notebook/Equipe1_agent_spasea.ipynb` in Jupyter or Google Colab.
 ---
 
 ## Contributors

@@ -1,0 +1,41 @@
+# PosAIdon - SPASEA Hackathon (Naval Group / DGA)
+# Python 3.10+
+# Install:  pip install -r requirements.txt
+
+# --- Data & core ---
+pandas>=2.0
+numpy>=1.24
+pyarrow>=14.0
+requests>=2.31
+python-dotenv>=1.0
+
+# --- AI agent ---
+langchain>=0.2
+langchain-core>=0.2
+langchain-community>=0.2
+langchain-openai>=0.1
+langgraph>=0.1
+wikipedia>=1.4
+
+# --- Mapping & geospatial ---
+folium>=0.15
+geopy>=2.4
+
+# --- Notebook & visualisation ---
+ipython>=8.0
+ipywidgets>=8.0
+plotly>=5.18
+nest-asyncio>=1.6
+
+# --- Reporting ---
+reportlab>=4.0
+python-docx>=1.1
+Pillow>=10.0
+
+# --- Optional: extended oceanographic layers (used during the hackathon) ---
+# copernicusmarine
+# xarray
+# netCDF4
+# shapely
+# duckdb
+# owslib
