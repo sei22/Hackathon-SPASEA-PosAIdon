@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="Assets/logo_hackathon.png" width="200" alt="Logo PosAIdon">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="Assets/logo_hackathon_dark.png">
+    <img src="Assets/logo_hackathon.png" width="220" alt="PosAIdon logo">
+  </picture>
 </p>
 
 # 🔱 PosAIdon - Augmented Naval Assistant (LLM & Data Fusion)
@@ -32,16 +35,25 @@ Rather than just adding another data layer, we created an interactive tool that 
 
 ## 📸 Project Overview
 <p align="center">
-  <img src="Assets/Screenshot 2025-12-05 11.11.55.png" width="45%" alt="Tactical Map View">
-  <img src="Assets/Screenshot 2025-12-05 12.54.08.png" width="45%" alt="AI Assistant Interface">
+  <img src="Assets/Screenshot 2025-12-05 11.11.55.png" width="90%" alt="PosAIdon dashboard: filter panel, tactical map and AI assistant">
 </p>
-<p align="center"><i>Tactical map view and natural language conversational interface.</i></p>
+<p align="center"><i>The operator dashboard: temporal filters, tactical map with AIS/RF layers, and the AI assistant answering a query in natural language.</i></p>
+
+<p align="center">
+  <img src="Assets/Screenshot 2025-12-05 12.54.08.png" width="70%" alt="Global AIS traffic density heatmap">
+</p>
+<p align="center"><i>Global AIS traffic density, built from the ingested datasets.</i></p>
 
 ## 📂 Repository Structure
-* `/Notebook/` : The core analysis (Python Notebook) including data fusion pipelines and the AI agent logic.
+* `/Notebook/` : The core analysis (Python Notebook) — ingestion pipelines, tactical map, the 25 LangChain tools powering the AI agent, and the operator dashboard.
 * `/Assets/` : Screenshots and visual demonstrations of the project.
 * `requirements.txt` : Required dependencies to run the project.
 * `.env.example` : Template for the API credentials (copy to `.env`).
+
+## 🔒 Data Availability
+The AIS, RF and satellite ephemeris datasets used in this project were provided by the hackathon partners (Unseenlabs, Prométhée, CNES) through the Dawex marketplace under restricted access. **They are confidential and cannot be redistributed, and no access can be granted.**
+
+This repository is therefore published as a **demonstration archive**: the notebook documents what the team built in 24 hours and keeps the original execution outputs, but it cannot be re-run without the source data. The steps below are provided for reference.
 
 ## 🚀 Getting Started & Security
 This project uses environment variables to securely manage API keys.
