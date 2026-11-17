@@ -1,0 +1,84 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="Assets/logo_hackathon_dark.png">
+    <img src="Assets/logo_hackathon.png" width="220" alt="PosAIdon logo">
+  </picture>
+</p>
+
+# 🔱 PosAIdon - Augmented Naval Assistant (LLM & Data Fusion)
+**🏆 1st Prize Winner - SPASEA Hackathon (Naval Group / DGA)**
+
+![Badge Victoire](https://img.shields.io/badge/Award-1st%20Prize-gold?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python)
+![IA](https://img.shields.io/badge/AI-LLM%20%26%20RAG-red?style=for-the-badge)
+
+## 🌊 The Challenge
+How can we help naval operators spot **"Dark Vessels"** (suspicious ships with disabled AIS or abnormal trajectories) in the vastness of the ocean?
+
+Competing against 10 teams from IMT Atlantique, École Navale, and ENSTA Bretagne during this 24h hackathon, our team **PosAIdon** developed an operational decision-support dashboard that was rewarded for its tactical relevance and technical feasibility.
+
+## 💡 The Solution: Intelligence in Action
+Rather than just adding another data layer, we created an interactive tool that **fuses** and **analyzes** information for the operator:
+
+1. **Multi-source Data Fusion & Tracking**: Real-time cross-referencing of AIS signals, Radio Frequency (RF) signatures, and satellite ephemerides to detect what is invisible to the naked eye. Features a live map with animated trajectory replays.
+2. **Suspicion Detection**: Flags vessels with abnormal speeds (drifting, unexpectedly stopped), detects RF signals with no corresponding AIS (classic dark vessel pattern), and scores vessels based on behavioral anomalies to identify potential spoofing.
+3. **Intelligent Tactical Assistant**: An AI agent allowing operators to query the tactical situation in natural language (e.g., *"Is vessel MMSI 227XXXXXX behaving normally?"* or *"Which vessels have no AIS in this zone?"*).
+4. **Operator Report (PDF)**: One-click PDF report generation summarizing a vessel of interest (history, anomalies, current position) ready to be handed off to the on-duty officer.
+
+## 🛠️ Tech Stack
+* **Languages & Core**: Python (pandas, pyarrow, requests, ipywidgets)
+* **AI Agent**: LangChain, LangGraph, OpenRouter API (Grok / GPT)
+* **Mapping**: **Folium** & Geopy (35+ maritime layers including EMODnet, NOAA, GEBCO, Marine Regions, bathymetry, EEZ, etc.)
+* **Data Integration**: Ingestion via **Dawex** API (Space Data Marketplace)
+* **Data Partners**: Unseenlabs (RF), Prométhée (Sat), CNES
+* **Environment**: Jupyter / Google Colab
+
+## 📸 Project Overview
+<p align="center">
+  <img src="Assets/Screenshot 2025-12-05 11.11.55.png" width="90%" alt="PosAIdon dashboard: filter panel, tactical map and AI assistant">
+</p>
+<p align="center"><i>The operator dashboard: temporal filters, tactical map with AIS/RF layers, and the AI assistant answering a query in natural language.</i></p>
+
+<p align="center">
+  <img src="Assets/Screenshot 2025-12-05 12.54.08.png" width="70%" alt="Global AIS traffic density heatmap">
+</p>
+<p align="center"><i>Global AIS traffic density, built from the ingested datasets.</i></p>
+
+## 📂 Repository Structure
+* `/Notebook/` : The core analysis (Python Notebook) — ingestion pipelines, tactical map, the 25 LangChain tools powering the AI agent, and the operator dashboard.
+* `/Assets/` : Screenshots and visual demonstrations of the project.
+* `requirements.txt` : Required dependencies to run the project.
+* `.env.example` : Template for the API credentials (copy to `.env`).
+
+## 🔒 Data Availability
+The AIS, RF and satellite ephemeris datasets used in this project were provided by the hackathon partners (Unseenlabs, Prométhée, CNES) through the Dawex marketplace under restricted access. **They are confidential and cannot be redistributed, and no access can be granted.**
+
+This repository is therefore published as a **demonstration archive**: the notebook documents what the team built in 24 hours and keeps the original execution outputs, but it cannot be re-run without the source data. The steps below are provided for reference.
+
+## 🚀 Getting Started & Security
+This project uses environment variables to securely manage API keys.
+
+1. **Clone the repo**:
+   ```bash
+   git clone https://github.com/sei22/Hackathon-SPASEA-PosAIdon.git
+   cd Hackathon-SPASEA-PosAIdon
+   ```
+2. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Set up your environment**:
+   Copy `.env.example` to `.env` and fill in your own API credentials:
+   ```bash
+   cp .env.example .env
+   ```
+   ```dotenv
+   DAWEX_CLIENT_ID=your_id
+   DAWEX_CLIENT_SECRET=your_secret
+   OPENROUTER_API_KEY=your_key
+   ```
+4. **Run the notebook**: open `Notebook/Equipe1_agent_spasea.ipynb` in Jupyter or Google Colab.
+---
+
+## Contributors
+[Sei BAYLE](https://github.com/sei22), [Juliette FAURIE](https://github.com/juliettefaurie), Charbel DIB, Axel GRUYEZ
